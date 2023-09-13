@@ -1,30 +1,27 @@
 ###TRAER TAREAS
 GET http://localhost:3000/api/posts
-Content-Type: application/json
-
-{
-    "title": "nuevo titulo",
-    "description": "nueva descripcion",
-    "poster": "www.url.com"
-}
+# Content-Type: application/json
+  
 
 ###CREAR TAREA
-POST  http://localhost:3000/api/posts
+POST http://localhost:3000/api/posts
 Content-Type: application/json
 
 {
-    "title": "nuevo titulo",
-    "description": "nueva descripcion",
-    "poster": "www.url.com"
+    "title": "Quinto Titulo",
+    "description": "Quinto Contenido",
+    "poster": "https://www.dzoom.org.es/wp-content/uploads/2017/07/seebensee-2384369-810x540.jpg" 
 }
 
+
 ###MODIFICAR TAREA
-PUT http://localhost:3000/api/posts/2
+PUT http://localhost:3000/api/posts/4
 Content-Type: application/json
 
 {
-    "title": "Primer tarea"
+    "title": "Cuarto Titulo",
+    "description": "Cuarto Contenido"
 }
 
 ###ELIMINAR TAREA
-DELETE http://localhost:3000/api/posts/3
+DELETE http://localhost:3000/api/posts/4

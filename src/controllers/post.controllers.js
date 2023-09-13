@@ -4,7 +4,7 @@ import { PostModel } from "../models/Post.js"
 //CONTROLADOR PARA TRAER TODAS LAS TAREAS
 export const ctrlGetPost = async(req, res) => {
     try {
-        const post = await TaskModel.findAll();              
+        const post = await PostModel.findAll();              
         if (!post) return res.status(404)
         return res.status(200).json(post)
 
@@ -58,7 +58,7 @@ export const ctrlDeletePost = async(req, res) => {
                 id: id
             }
         })
-        if(!taskDeletd) {
+        if(!postDeletd) {
             returnres.status(404).json({
                 message: "Tarea no encontrada"
             })
