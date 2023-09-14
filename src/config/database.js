@@ -1,8 +1,5 @@
 import { Sequelize } from "sequelize";
 
-
-
-
 export const sequelize = new Sequelize('db_task', 'root', '', {
     host: 'localhost',
     dialect: 'mysql' 

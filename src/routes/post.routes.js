@@ -1,17 +1,21 @@
 import { Router } from "express";
-import { ctrlCreatePost, ctrlDeletePost, ctrlGetPost, ctrlUpdatePost } from "../controllers/post.controllers.js";
-import { createPostSchema } from "../models/schemas/post.schema.js"
+import { ctrlCreatePost, ctrlDeletePost, ctrlGetPosts, ctrlUpdatePost } from "../controllers/post.controllers.js";
+import { createPostSchema, editPostSchema } from "../models/schemas/post.schema.js"
 import { validator } from "../middlewares/validator.js";
-import { PostModel } from "../models/Post.js";
+import { PostModel } from "../models/Posts.js";
 
 const postRouter = Router();
 
-postRouter.get('/api/posts', ctrlGetPost)
+//endpoint para traer todas las tareas
+postRouter.get('/api/posts', ctrlGetPosts)
 
-postRouter.post('/api/posts', ctrlCreatePost)
+//endpoint para crear una tarea
+postRouter.post('/api/posts', createPostSchema, validator, ctrlCreatePost)
 
-postRouter.put('/api/:id', ctrlUpdatePost)
+//endpoint para modificar una tarea
+postRouter.put('/api/posts/:id', editPostSchema, validator, ctrlUpdatePost)
 
-postRouter.delete('/api/:id', ctrlDeletePost)
+//endpoint para eliminar una tarea
+postRouter.delete('/api/posts/:id', ctrlDeletePost)
 
-export { postRouter }
+export { postRouter };

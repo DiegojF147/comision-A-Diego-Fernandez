@@ -6,15 +6,15 @@ import { sequelize } from "../config/database.js";
 export const PostModel = sequelize.define('Post', {
     title: {
         type: DataTypes.STRING,
-        allowNull: true,
+        allowNull: true
     },
     description: {
         type: DataTypes.STRING,
-        allowNull: true,
+        allowNull: true
     },
     poster: {
         type: DataTypes.STRING,
-        defaultValue: DataTypes.NOW,
+        defaultValue: DataTypes.NOW
     }
     
 }, {

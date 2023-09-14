@@ -1,6 +1,6 @@
 ###TRAER TAREAS
 GET http://localhost:3000/api/posts
-# Content-Type: application/json
+
   
 
 ###CREAR TAREA
@@ -8,14 +8,14 @@ POST http://localhost:3000/api/posts
 Content-Type: application/json
 
 {
-    "title": "Quinto Titulo",
-    "description": "Quinto Contenido",
+    "title": "Cuarto Titulo",
+    "description": "Cuarto Contenido",
     "poster": "https://www.dzoom.org.es/wp-content/uploads/2017/07/seebensee-2384369-810x540.jpg" 
 }
 
 
 ###MODIFICAR TAREA
-PUT http://localhost:3000/api/posts/4
+PUT http://localhost:3000/api/posts/6
 Content-Type: application/json
 
 {
@@ -24,4 +24,4 @@ Content-Type: application/json
 }
 
 ###ELIMINAR TAREA
-DELETE http://localhost:3000/api/posts/4
+DELETE http://localhost:3000/api/posts/6

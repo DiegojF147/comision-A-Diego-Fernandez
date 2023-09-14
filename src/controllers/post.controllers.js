@@ -1,8 +1,8 @@
-import { PostModel } from "../models/Post.js"
+import { PostModel } from "../models/Posts.js"
 
 
 //CONTROLADOR PARA TRAER TODAS LAS TAREAS
-export const ctrlGetPost = async(req, res) => {
+export const ctrlGetPosts = async(req, res) => {
     try {
         const post = await PostModel.findAll();              
         if (!post) return res.status(404)
@@ -19,8 +19,8 @@ export const ctrlGetPost = async(req, res) => {
 //CONTROLADOR PARA CREAR UNA TAREA
 export const ctrlCreatePost = async(req, res) => {
     try {
-        const newPosts = await PostModel.create(req.body)
-        return res.status(201).json(newPosts)
+        const newPost = await PostModel.create(req.body)
+        return res.status(201).json(newPost)
     } catch (error) {
         console.error(error)
         return res.status(500).json({
@@ -53,12 +53,12 @@ export const ctrlUpdatePost = async(req, res) => {
 export const ctrlDeletePost = async(req, res) => {
     const { id } = req.params
     try {
-        const postDeletd = await PostModel.destroy({
+        const PostDelete = await PostModel.destroy({
             where: {
                 id: id
             }
         })
-        if(!postDeletd) {
+        if(!PostDelete) {
             returnres.status(404).json({
                 message: "Tarea no encontrada"
             })
@@ -73,3 +73,4 @@ export const ctrlDeletePost = async(req, res) => {
         })
     }
 }
+

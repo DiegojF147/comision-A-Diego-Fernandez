@@ -1,7 +1,9 @@
 import express from 'express';
-import { postRouter } from './src/routes/post.routes.js';
+
 import { startDb } from './src/config/database.js';
 import cors from 'cors'
+import { postRouter } from './src/routes/post.routes.js';
+
 
 const app = express();
 
