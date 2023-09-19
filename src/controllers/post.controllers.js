@@ -1,5 +1,9 @@
 import { PostModel } from "../models/Posts.js"
 
+//controlador para mostrar la vista
+export const ctrlView = (req, res) => {
+    res.render('index.ejs')
+};
 
 //CONTROLADOR PARA TRAER TODAS LAS TAREAS
 export const ctrlGetPosts = async(req, res) => {

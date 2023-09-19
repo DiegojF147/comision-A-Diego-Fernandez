@@ -1,3 +1,6 @@
+###VISTA
+GET http://localhost:3000/posts
+
 ###TRAER TAREAS
 GET http://localhost:3000/api/posts
 

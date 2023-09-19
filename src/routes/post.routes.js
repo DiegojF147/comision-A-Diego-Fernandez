@@ -1,10 +1,13 @@
 import { Router } from "express";
-import { ctrlCreatePost, ctrlDeletePost, ctrlGetPosts, ctrlUpdatePost } from "../controllers/post.controllers.js";
+import { ctrlCreatePost, ctrlDeletePost, ctrlGetPosts, ctrlUpdatePost, ctrlView } from "../controllers/post.controllers.js";
 import { createPostSchema, editPostSchema } from "../models/schemas/post.schema.js"
 import { validator } from "../middlewares/validator.js";
 import { PostModel } from "../models/Posts.js";
 
 const postRouter = Router();
+
+//RUTA PARA LA VISTA
+postRouter.get('/posts', ctrlView)
 
 //endpoint para traer todas las tareas
 postRouter.get('/api/posts', ctrlGetPosts)

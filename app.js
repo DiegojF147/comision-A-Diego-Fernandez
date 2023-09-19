@@ -1,9 +1,12 @@
 import express from 'express';
-
-import { startDb } from './src/config/database.js';
-import cors from 'cors'
 import { postRouter } from './src/routes/post.routes.js';
+import { startDb } from './src/config/database.js';
+import path from 'node:path'
+import cors from 'cors'
+import { fileURLToPath } from 'node:url';
 
+const _filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(_filename)
 
 const app = express();
 
@@ -11,13 +14,18 @@ const app = express();
 app.use(express.json())
 app.use(cors())
 
-const port = 3000;
+app.use(express.static(path.join(__dirname, "src", "public")))
+
+app.set('views', path.join(__dirname, "src", "views"))
+app.set('view engine', 'ejs')
+
+const port = 3000
 
 app.use('/', postRouter)
 
 
 app.listen(port, () => {
-    console.log(`server listening http://localhost:${port}`)
+    console.log(`server listening http://localhost:${port}/posts`)
     startDb()
 })
 
