@@ -7,6 +7,7 @@ import { PostModel } from "../models/Posts.js";
 const postRouter = Router();
 
 //RUTA PARA LA VISTA
+postRouter.get('/', ctrlView)
 postRouter.get('/posts', ctrlView)
 
 //endpoint para traer todas las tareas

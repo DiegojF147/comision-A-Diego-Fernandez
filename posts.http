@@ -1,30 +1,31 @@
 ###VISTA
 GET http://localhost:3000/posts
 
-###TRAER TAREAS
+###TRAER POSTS
 GET http://localhost:3000/api/posts
-
+Content-Type: application/json
   
 
-###CREAR TAREA
+###CREAR POST
 POST http://localhost:3000/api/posts
 Content-Type: application/json
 
 {
-    "title": "Cuarto Titulo",
-    "description": "Cuarto Contenido",
-    "poster": "https://www.dzoom.org.es/wp-content/uploads/2017/07/seebensee-2384369-810x540.jpg" 
+    "title": "Nuevo Titulo",
+    "description": "Post",
+    "poster": "www.url.com" 
 }
 
 
-###MODIFICAR TAREA
-PUT http://localhost:3000/api/posts/6
+###MODIFICAR POST
+PUT http://localhost:3000/api/posts/1
 Content-Type: application/json
 
 {
-    "title": "Cuarto Titulo",
-    "description": "Cuarto Contenido"
+    "title": "Nuevo Titulo",
+    "description": "Post",
+    "poster": "www.url.com"
 }
 
 ###ELIMINAR TAREA
-DELETE http://localhost:3000/api/posts/6
+DELETE http://localhost:3000/api/posts/1
