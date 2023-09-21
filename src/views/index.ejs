@@ -1,7 +1,7 @@
 <%- include("partials/header") -%>
 
 
-<header class="d-flex justify-content-center">
+<header class="d-flex justify-content-center bg-primary-subtle">
     <h1>FORO MULTITEMATICO</h1>
 </header>
 
@@ -12,7 +12,7 @@
              <% posts.forEach(post => { %>
 
                 <article class="col-4 d-flex justify-content-center mb-3" data-id="<%= post.id %>">
-                    <div class="card" style="width: 18rem;">
+                    <div class="card" >
                         <img src="<%= post.poster %>" class="card-img-top" alt="Nuevo titulo">
                         <div class="card-body">
                             <h5 class="card-title">
