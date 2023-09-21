@@ -1,10 +1,11 @@
 import express from 'express';
-import { postRouter } from './src/routes/post.routes.js';
-import { startDb } from './src/config/database.js';
 import path from 'node:path';
 import cors from 'cors';
 import morgan from 'morgan';
 import helmet from 'helmet';
+import 'dotenv/config'
+import { postRouter } from './src/routes/post.routes.js';
+import { startDb } from './src/config/database.js';
 import { fileURLToPath } from 'node:url';
 
 const _filename = fileURLToPath(import.meta.url)
@@ -29,7 +30,7 @@ app.use(express.static(path.join(__dirname, "src", "public")))
 app.set('views', path.join(__dirname, "src", "views"))
 app.set('view engine', 'ejs');
 
-const port = 3000
+const port = process.env.PORT
 
 app.use('/', postRouter)
 
